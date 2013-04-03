@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: haui_sns_dev
+  pool: 5
+  username: minhkhoi
+  password: 123456
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: haui_sns_test
+  pool: 5
+  username: minhkhoi
+  password: 123456

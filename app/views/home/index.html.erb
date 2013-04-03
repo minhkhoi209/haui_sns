@@ -1,0 +1,5 @@
+<h1>Welcome to HauiSNS</h1>
+<br/>
+<h4>Hello <%= current_user.username %></h4>
+<p><%= link_to 'Update info', edit_user_registration_path %></p>
+<p>Not you? <%= link_to('Logout', destroy_user_session_path, :method => 'delete') %></p>
