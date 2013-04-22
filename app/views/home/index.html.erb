@@ -3,3 +3,15 @@
 <h4>Hello <%= current_user.username %></h4>
 <p><%= link_to 'Update info', edit_user_registration_path %></p>
 <p>Not you? <%= link_to('Logout', destroy_user_session_path, :method => 'delete') %></p>
+<h3>Someone you may know</h3>
+<% if !@users.blank? %>
+  <% for user in @users %>
+    <strong><%=  user.username %></strong>
+    <% if current_user.friend_of? user %>
+    <p>Already be friend. Unhappy? </p><%= link_to "unfriend", current_user.friendships.find(:first, :conditions => ["friend_id = ?", user]), :method => :delete %>
+    <% else %>
+    	<%= link_to "Add as Friend", friendships_path(:friend_id => user), :method => :post %>
+    <% end %>
+	<br/>
+  <% end %>
+<% end %>

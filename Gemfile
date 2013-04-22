@@ -8,10 +8,10 @@ gem 'rails'
 # gem 'sqlite3'
 gem 'pg'
 gem 'devise'
-gem 'activeadmin'
+# gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 # gem 'web-app-theme'
-gem 'web-app-theme', :git =>'git://github.com/pilu/web-app-theme.git'
+# gem 'web-app-theme', :git =>'git://github.com/pilu/web-app-theme.git'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -3,5 +3,6 @@ class HomeController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path
     end
+    @users = User.first(10)
   end
 end

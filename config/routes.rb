@@ -1,6 +1,9 @@
 HauiVN::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
+  resources :friendships
+  get "friendship/create"
+
+  get "friendship/destroy"
 
   devise_for  :users, :controllers => { :sessions => "sessions" },
               :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
@@ -12,6 +15,8 @@ HauiVN::Application.routes.draw do
   namespace :mobile do
     devise_scope :user do
       post 'registrations' => 'registrations#create', :as => 'register'
+      post 'sessions' => 'sessions#create', :as => 'login'
+      delete 'sessions' => 'sessions#destroy', :as => 'logout'
     end
   end
 
